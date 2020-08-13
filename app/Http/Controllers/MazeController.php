@@ -25,33 +25,10 @@ class MazeController extends Controller
         }
 
         // buat polanya dinding pintu kiri, jalan, sama dindin pintu kanan
-        $dindingPintuKiri = "";
-        $jalan = "";
-        $dindingPintuKanan = "";
-    
-        $lastIndex = $s-1;
-        $pintuKanan = $lastIndex-1;
-      
-        for($i=0;$i<$s;$i++){
-            if($i == 1){
-                  $dindingPintuKiri = $dindingPintuKiri."<pre>&nbsp;</pre>";
-            }else{
-                  $dindingPintuKiri = $dindingPintuKiri."<pre>@</pre>";  
-            }
-    
-            if($i == 0 || $i == $lastIndex){
-                  $jalan = $jalan."<pre>@</pre>";    
-            }else{
-                  $jalan = $jalan."<pre>&nbsp;</pre>";  
-            }
-    
-            if($i == $pintuKanan){
-                  $dindingPintuKanan = $dindingPintuKanan."<pre>&nbsp;</pre>";
-            }else{
-                  $dindingPintuKanan = $dindingPintuKanan."<pre>@</pre>";  
-            }
-        }
-        // end pola dinding
+        $repeat = $s - 2;
+        $dindingPintuKiri = "<pre>@</pre>"."<pre>&nbsp;</pre>".str_repeat("<pre>@</pre>", $repeat);
+        $jalan = "<pre>@</pre>".str_repeat("<pre>&nbsp;</pre>", $repeat)."<pre>@</pre>";
+        $dindingPintuKanan = str_repeat("<pre>@</pre>", $repeat)."<pre>&nbsp;</pre>"."<pre>@</pre>";
     
         // buat pola mazenya
         $maze = "";
