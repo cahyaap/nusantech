@@ -13,3 +13,7 @@ Dengan ketentuan:
 ```
 composer install
 ```
+
+```
+php artisan serve
+```
