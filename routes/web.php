@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MazeController@index');
+Route::post('/generate', 'MazeController@generate')->name('generate');
