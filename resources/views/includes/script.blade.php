@@ -4,7 +4,7 @@
     $(document).ready(function(){
         $('#generate-form').submit(function(e){
             e.preventDefault();
-            var _this = $(this);
+            var _this = $('#generate-btn');
             _this.hide();
             $('#please-wait').show();
 
